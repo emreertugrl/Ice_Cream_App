@@ -1,0 +1,34 @@
+{
+  "iceCreams": [
+    {
+      "name": "Bal Badem",
+      "image": "/ice-5.png",
+      "price": 25.0
+    },
+    {
+      "name": "Çikolata Fırtınası",
+      "image": "/ice-1.png",
+      "price": 20.0
+    },
+    {
+      "name": "Vanilya Düşleri",
+      "image": "/ice-6.png",
+      "price": 22.5
+    },
+    {
+      "name": "Mango Serinliği",
+      "image": "/ice-7.png",
+      "price": 28.0
+    },
+    {
+      "name": "Böğürtlen Dalgalanması",
+      "image": "/ice-3.png",
+      "price": 32.0
+    },
+    {
+      "name": "Fıstık Rüyası",
+      "image": "/ice-8.png",
+      "price": 34.0
+    }
+  ]
+}
