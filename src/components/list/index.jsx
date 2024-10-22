@@ -28,8 +28,8 @@ const List = () => {
       ) : (
         data && (
           <div className="grid lg:grid-cols-2 gap-4 lg:gap-8 mt-8">
-            {data.map((item) => (
-              <Card key={item.id} item={item} />
+            {data.map((item, key) => (
+              <Card key={key} item={item} />
             ))}
           </div>
         )

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Selector from "../list/Selector";
+import AmouthPicker from "./AmouthPicker";
 
 const Card = ({ item }) => {
   const [selectedType, setSelectedType] = useState(null);
 
   return (
-    <div className="bg-black/20 border border-white/50 rounded-3xl pr-5 py-12 flex items-center">
+    <div className="bg-black/20 border border-white/50 rounded-3xl pr-5 py-8  lg:py-12 flex items-center">
       <div className="">
         <img
           className="size-[150px] object-contain drop-shadow-2xl"
@@ -20,11 +21,16 @@ const Card = ({ item }) => {
           setSelectedType={setSelectedType}
           selectedType={selectedType}
         />
-        <div>
-          <p>₺ {item.price} / top</p>
+        <div className="flex justify-between">
+          <p className="text-lg">₺ {item.price} / top</p>
+          <button
+            onClick={() => setSelectedType(null)}
+            className={`border py-1 px-3 rounded-md  hover:bg-white/30 transition 
+            ${!selectedType && "invisible"}`}
+          >
+            Sepete Ekle
+          </button>
         </div>
-
-        <Amount />
       </div>
     </div>
   );
