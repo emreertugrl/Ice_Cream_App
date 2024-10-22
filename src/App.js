@@ -8,12 +8,14 @@ import Home from "./pages/home/index";
 const App = () => {
   return (
     <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* <Route path="/about" element={<Hero />} /> */}
-        {/* <Route path="*" element={<List />} /> */}
-      </Routes>
+      <div className="h-screen bg-red-700 text-white py-[30px] 2xl:py-[50px] px-[5%]">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/about" element={<Hero />} /> */}
+          {/* <Route path="*" element={<List />} /> */}
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 };
