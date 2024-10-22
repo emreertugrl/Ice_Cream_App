@@ -3,8 +3,9 @@ import api from "./../../api";
 import TrendButton from "./TrendButton";
 import Loader from "./../loader/index";
 import Error from "./../error/index";
+import Card from "../card";
 const List = () => {
-  const iceCreams = "/iceCreams123";
+  const iceCreams = "/iceCreams";
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -23,9 +24,15 @@ const List = () => {
       {isLoading ? (
         <Loader />
       ) : error ? (
-        <Error info={error} />
+        <Error />
       ) : (
-        data && <div>data</div>
+        data && (
+          <div className="grid lg:grid-cols-2 gap-4 lg:gap-8 mt-8">
+            {data.map((item) => (
+              <Card key={item.id} item={item} />
+            ))}
+          </div>
+        )
       )}
     </div>
   );
