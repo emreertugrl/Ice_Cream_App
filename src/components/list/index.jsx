@@ -4,6 +4,7 @@ import TrendButton from "./TrendButton";
 import Loader from "./../loader/index";
 import Error from "./../error/index";
 import Card from "../card";
+
 const List = () => {
   const iceCreams = "/iceCreams";
   const [data, setData] = useState(null);

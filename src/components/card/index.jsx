@@ -1,9 +1,18 @@
 import React, { useState } from "react";
 import Selector from "../list/Selector";
-import AmouthPicker from "./AmouthPicker";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/cartSlice";
 
 const Card = ({ item }) => {
   const [selectedType, setSelectedType] = useState(null);
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    // store haber veririz.
+    dispatch(addToCart({ item, selectedType }));
+    // seçeneği temizle
+    setSelectedType(null);
+  };
 
   return (
     <div className="bg-black/20 border border-white/50 rounded-3xl pr-5 py-8  lg:py-12 flex items-center">
@@ -24,7 +33,7 @@ const Card = ({ item }) => {
         <div className="flex justify-between">
           <p className="text-lg">₺ {item.price} / top</p>
           <button
-            onClick={() => setSelectedType(null)}
+            onClick={handleClick}
             className={`border py-1 px-3 rounded-md  hover:bg-white/30 transition 
             ${!selectedType && "invisible"}`}
           >
