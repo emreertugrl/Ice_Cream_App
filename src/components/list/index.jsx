@@ -1,20 +1,19 @@
 import { useEffect, useState } from "react";
-import api from "./../../api";
 import TrendButton from "./TrendButton";
 import Loader from "./../loader/index";
 import Error from "./../error/index";
+import api from "./../../api";
 import Card from "../card";
 
 const List = () => {
-  const iceCreams = "/iceCreams";
-  const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     setIsLoading(true);
     api
-      .get(iceCreams)
+      .get("/iceCreams")
       .then((res) => setData(res.data))
       .catch((err) => setError(err.message))
       .finally(() => setIsLoading(false));
@@ -25,7 +24,7 @@ const List = () => {
       {isLoading ? (
         <Loader />
       ) : error ? (
-        <Error />
+        <Error info={error} />
       ) : (
         data && (
           <div className="grid lg:grid-cols-2 gap-4 lg:gap-8 mt-8">
