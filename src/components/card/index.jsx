@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";
 
 const Card = ({ item }) => {
+  console.log(item);
   const [selectedType, setSelectedType] = useState(null);
   const dispatch = useDispatch();
 
