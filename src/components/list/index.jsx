@@ -4,6 +4,7 @@ import Loader from "./../loader/index";
 import Error from "./../error/index";
 import api from "./../../api";
 import Card from "../card";
+import Cart from "./../cart/index";
 
 const List = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -20,6 +21,7 @@ const List = () => {
   }, []);
   return (
     <div className="mt-[30px] lg:mt-[100px]">
+      <Cart />
       <TrendButton />
       {isLoading ? (
         <Loader />
