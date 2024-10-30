@@ -1,5 +1,5 @@
 import React from "react";
-import AmountPicker from "./../card/AmountPicker";
+import AmountPicker from "./AmountPicker";
 
 const CartItem = ({ item }) => {
   return (
@@ -12,8 +12,8 @@ const CartItem = ({ item }) => {
         </div>
       </div>
       <div className="flex items-center gap-3">
-        <AmountPicker amouth={item.quantity} />
-        <p className="text-lg md:text-xl  min-w-[60px] text-end font-semibold text-gray-600">
+        <AmountPicker item={item} />
+        <p className="text-lg md:text-xl  min-w-[90px] text-end font-semibold text-gray-600">
           {item.price * item.quantity} ₺
         </p>
       </div>

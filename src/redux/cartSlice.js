@@ -24,9 +24,25 @@ const cartSlice = createSlice({
         });
       }
     },
+    createOrder: (state) => {
+      state.cart = [];
+    },
+    deleteFromCart: (state, { payload }) => {
+      // aynı id ve aynı tipteki elemanı sepette sırasını bul
+      const index = state.cart.findIndex(
+        (i) => i.id === payload.id && i.selectedType === payload.selectedType
+      );
+      // miktarı 1den fazla ise miktarını azalt
+      if (state.cart[index].quantity > 1) {
+        state.cart[index].quantity--;
+      } else {
+        // miktarı 1 ise ürünü sil
+        state.cart.splice(index, 1);
+      }
+    },
   },
 });
 
 export default cartSlice.reducer;
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, createOrder, deleteFromCart } = cartSlice.actions;
