@@ -36,3 +36,12 @@ export const mockArray = [
     id: "853b",
   },
 ];
+
+export const mockItem = {
+  name: "Bal Badem",
+  image: "/ice-5.png",
+  price: 25,
+  id: "5b40",
+  selectedType: "cornet",
+  quantity: 1,
+};

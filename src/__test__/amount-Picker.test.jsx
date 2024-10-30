@@ -3,6 +3,7 @@ import AmountPicker from "../components/cart/AmountPicker";
 import { useDispatch } from "react-redux";
 import { userEvent } from "@testing-library/user-event";
 import { addToCart, deleteFromCart } from "../redux/cartSlice";
+import { mockItem } from "../constants";
 
 // useDispatch mocklanır
 jest.mock("react-redux", () => ({
@@ -10,14 +11,7 @@ jest.mock("react-redux", () => ({
 }));
 
 describe("AmountPicker", () => {
-  const item = {
-    name: "Bal Badem",
-    image: "/ice-5.png",
-    price: 25,
-    id: "5b40",
-    selectedType: "cornet",
-    quantity: 1,
-  };
+  const item = mockItem;
   // useDispatch döndürdüğü dispatch mocklama
   const dispatchMock = jest.fn();
 
