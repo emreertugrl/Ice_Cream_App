@@ -7,12 +7,16 @@ const Modal = ({ isOpen, close }) => {
   const { cart } = useSelector((store) => store);
   return (
     isOpen && (
-      <div className="fixed overflow-y-auto  bg-black/30 inset-0 grid place-items-center text-black backdrop-blur">
+      <div
+        data-testid="modal"
+        className="fixed overflow-y-auto  bg-black/30 inset-0 grid place-items-center text-black backdrop-blur"
+      >
         <div className="bg-white p-5 rounded-lg w-[90%] md:w-[600px]">
           <div className="border-b  pb-3 max-md:text-lg fs-5 flex justify-between">
             <h1 className="font-semibold ">SİPARİŞ</h1>
             <button
               onClick={close}
+              data-testid="close"
               className="border p-2 rounded-md hover:bg-gray-300/50"
             >
               <IoClose />
